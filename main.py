@@ -17,8 +17,7 @@ def evaluate_character(dpr, var_dpr, edt, hp, risk_free_dpr):
 
     # Calculate Variance of Total Expected Damage (with zero-inflation due to deaths.)
     # using law of total variance.
-    var_ted = st * (var_dpr * p_survive + dpr**2 * p_survive * (1 - p_survive))
-    st * (var_dpr * p_survive + dpr**2 * p_survive * (1 - p_survive))
+    var_ted = st**2 * (var_dpr * p_survive + dpr**2 * p_survive * (1 - p_survive))
 
     # Calculate Combat Efficiency Ratio (Sharpe Ratio for DnD).
     risk_free_total = risk_free_dpr * st
